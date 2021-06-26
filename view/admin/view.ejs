@@ -5,7 +5,7 @@
   <title>READ - VIEW</title>
 </head>
 <body>
-    <h2> Hasil </h2>
+    <h2>Hasil</h2>
 
     <ul>
       <!-- Loop through quotes -->
@@ -19,8 +19,10 @@
           <span><%= hasil[i].password %></span> - 
           <!-- Output quote from the iterated quote object -->
           <span><%= hasil[i].nama %></span>
+          <button id="delete-button">Delete</button>
         </li>
       <% } %>
     </ul>
+
 </body>
 </html>

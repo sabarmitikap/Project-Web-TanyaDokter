@@ -47,3 +47,21 @@ db.connect((err)=>{
         });
     }
 });
+
+const deleteButton = document.querySelector('#delete-button')
+
+deleteButton.addEventListener('click', _ => {
+  fetch('/quotes', {
+    method: 'delete',
+  })
+})
+
+app.delete('/admin/delete', (req, res) => {
+    quotesCollection.deleteOne(
+      { name: req.body.name }
+    )
+      .then(result => {
+        res.json('Deleted')
+      })
+      .catch(error => console.error(error))
+  })
