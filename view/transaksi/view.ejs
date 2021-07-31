@@ -14,10 +14,9 @@
               <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Nama</th>
-                    <th>Action</th>
+                    <th>Pasien</th>
+                    <th>Jenis</th>
+                    <th>Nominal</th>
                 </tr>
                 </thead>
                 <tbody></tbody>
@@ -36,25 +35,25 @@
           "ajax": {
               "data": "json",
               "type": "GET",
-              "url": "/admin/read/table",
+              "url": "/transaksi/read/table",
               dataSrc:""
           },
               "columns":
                   [
-                      { "data": "_id" },
-                      { "data": "username" },
-                      { "data": "password" },
-                      { "data": "name" },
+                      { "data": "id_transaksi" },
+                      { "data": "id_pengguna" },
+                      { "data": "jenis" },
+                      { "data": "nominal" },
                       {
                         "data": null,
                         "bSortable": false,
                         "mRender": function (data, type, row) { 
-                            return  '<a href=/admin/update/' + row.username + '><button type="button" class="btn btn-primary">' + 'Edit' + '</button></a>   ' +
-                                    '<a href=/admin/delete/' + row.username + '><button type="button" class="btn btn-danger">' + 'Hapus' + '</button></a>'; 
+                            return  '<a href=/transaksi/update/' + '><button type="button" class="btn btn-primary">' + 'Edit' + '</button></a>   ' +
+                                    '<a href=/transaksi/delete/' + '><button type="button" class="btn btn-danger">' + 'Hapus' + '</button></a>'; 
                         }
                       }
                   ]
-          });
+      });
   });
 </script>
 </html>

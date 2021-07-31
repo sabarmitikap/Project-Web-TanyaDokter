@@ -17,6 +17,23 @@
                     <th>Username</th>
                     <th>Password</th>
                     <th>Nama</th>
+                    <th>Phone</th>
+                    <th>Email</th> 
+                    <th>Province</th>
+                    <th>City</th>
+                    <th>Districts</th>
+                    <th>Detail</th>
+                    <th>Postal Code</th>
+                    <th>Province</th>
+                    <th>City</th>
+                    <th>Districts</th>
+                    <th>Detail</th>
+                    <th>Postal Code</th>
+                    <th>Spesialis</th>
+                    <th>String</th>
+                    <th>Saldo</th>
+                    <th>Status</th>
+                    <th>Harga</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -36,7 +53,7 @@
           "ajax": {
               "data": "json",
               "type": "GET",
-              "url": "/admin/read/table",
+              "url": "/dokter/read/table",
               dataSrc:""
           },
               "columns":
@@ -44,7 +61,32 @@
                       { "data": "_id" },
                       { "data": "username" },
                       { "data": "password" },
-                      { "data": "name" }
+                      { "data": "name" },
+                      { "data": "telepon" },
+                      { "data": "email" },
+                      { "data": "provinsipraktik" },
+                      { "data": "kotapraktik" },
+                      { "data": "kecamatanpraktik" },
+                      { "data": "detailpraktik" },
+                      { "data": "kodepospraktik" },
+                      { "data": "provinsi" },
+                      { "data": "kota" },
+                      { "data": "kecamatan" },
+                      { "data": "detail" },
+                      { "data": "kodepos" },
+                      { "data": "spesialis" },
+                      { "data": "string" },
+                      { "data": "saldo" },
+                      { "data": "status" },
+                      { "data": "harga" },
+                      {
+                          "data": null,
+                          "bSortable": false,
+                          "mRender": function (data, type, row) {
+                              return '<a href=/dokter/update/' + row.username + '><button type="button" class="btn btn-primary">' + 'Edit' + '</button></a>   ' +
+                                     '<a href=/dokter/delete/' + row.username + '><button type="button" class="btn btn-danger">' + 'Hapus' + '</button></a>'; 
+                          }
+                      }                       
                   ]
           
       });
